@@ -1,0 +1,20 @@
+# install neovim:
+mkdir -p $HOME/tools/ && cd $HOME/tools/
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+tar zxvf nvim-linux64.tar.gz
+
+#add in .bash_profile:
+export PATH=$HOME/tools/nvim-linux64/bin:$PATH
+
+
+#install vim-plug:
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Formatting:
+:Neoformat! python pyright
+
+
+
+
+Sources: https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
